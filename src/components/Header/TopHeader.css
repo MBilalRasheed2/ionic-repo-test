@@ -1,0 +1,37 @@
+.header-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.align-item-center {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.search-bar-width {
+    width: 20%;
+}
+
+.button-color {
+   color: blue;
+   background-color: white;
+   width: 8%;
+}
+
+.ion-select {
+    border-bottom: 0px;
+}
+  
+.padding-item {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+    font-weight:bold;
+
+}
