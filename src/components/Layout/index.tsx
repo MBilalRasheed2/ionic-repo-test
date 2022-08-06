@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { PropsWithChildren, ReactNode } from 'react'
 import { IonCol, IonContent, IonGrid, IonRow } from '@ionic/react';
 import Header from '../Header';
 import LeftSide from '../LeftSide';
 import './index.css'
-const Layout: React.FC = (props) => {
-
+interface Props {
+    showProps?: boolean;
+    children: ReactNode
+  }
+  
+const Layout: React.FC<PropsWithChildren<Props>>= (props) => {
     return (
         <>
             <Header />
@@ -12,7 +16,7 @@ const Layout: React.FC = (props) => {
                 <IonGrid>
                     <IonRow>
                         <IonCol sizeMd='2.5' sizeSm='12'>
-                            <LeftSide />
+                           {props.showProps && <LeftSide />} 
                         </IonCol>
                         <IonCol sizeMd='9.5' sizeSm='12'>
                             {props.children}

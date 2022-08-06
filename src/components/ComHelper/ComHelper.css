@@ -1,0 +1,9 @@
+.offer-settings {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.off-padding > *{
+    padding-left: 10px;
+    padding-right: 10px;
+}
