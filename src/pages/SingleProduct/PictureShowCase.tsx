@@ -1,23 +1,29 @@
 import React, { useState } from 'react'
 import { IonCheckbox, IonCol, IonItem, IonLabel, IonList, IonRow } from '@ionic/react'
-import { productlist } from '../../components/Layout/dummyData'
+
 import './SingleProduct.css';
-const PictureShowCase = () => {
+
+interface Props {
+    images: string[];
+
+}
+const PictureShowCase: React.FC<React.PropsWithChildren<Props>> = (props) => {
     const [defaultImage, setDefaultImage] = useState('')
+    const { images } = props;
     return (
         <IonRow>
             <IonCol size='3'>
                 <IonList>
                     {
-                        productlist[0].images.map(item => {
-                            return (
-                                <IonItem
-                                    lines='none'
-                                    key={item}>
-                                    <img
-                                        src={item}
-                                        className='small-thump' />
-                                </IonItem>)
+                        images.map((item: any) => {
+                            return (<IonItem
+                                lines='none'
+                                onClick={() => setDefaultImage(item)}
+                                key={item}>
+                                <img
+                                    src={item}
+                                    className='small-thump' />
+                            </IonItem>)
                         })
                     }
                 </IonList>
@@ -25,7 +31,7 @@ const PictureShowCase = () => {
             <IonCol size='9'>
                 <div className='img-wrapper'>
                     <img
-                        src={defaultImage !== "" ? defaultImage : productlist[0].images[0]}
+                        src={defaultImage !== "" ? defaultImage : images[0]}
                         className='picture-settings'
                     />
                 </div>
@@ -34,4 +40,4 @@ const PictureShowCase = () => {
     )
 }
 
-export default PictureShowCase
+export default PictureShowCase;

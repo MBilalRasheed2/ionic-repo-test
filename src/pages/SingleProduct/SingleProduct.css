@@ -41,6 +41,21 @@
 
 .danger-custom-text {
     background-color: #26a541;
-    padding:4px  8px;
-    border-radius: 10px;
+    padding: 2px 7px;
+    border-radius: 14px;
+    font-size: 16px;
+    color: white;
+}
+
+.danger-custom-text2 {
+    padding: 2px 7px;
+    border-radius: 14px;
+    font-size: 16px;
+    color: #26a541;
+}
+
+.text-style1 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #878787;
 }
