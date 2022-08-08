@@ -1,8 +1,8 @@
 import React from 'react'
 import './TopHeader.css'
 import { IonButton, IonButtons, IonContent, IonIcon, IonItem, IonLabel, IonPopover, IonSearchbar, IonToolbar } from '@ionic/react'
-import iconName from './cart.svg';
-import down from './chevron-down-outline.svg';
+import iconName from '../icons/cart.svg';
+import down from '../icons/chevron-down-outline.svg';
 
 const TopHeader : React.FC = () => {
     return (

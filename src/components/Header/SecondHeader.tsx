@@ -1,7 +1,7 @@
 import { IonButton, IonButtons, IonContent, IonIcon, IonItem, IonLabel, IonPopover, IonSearchbar, IonToolbar } from '@ionic/react'
 
 import React from 'react'
-import down from './chevron-down-outline.svg';
+import down from '../icons//chevron-down-outline.svg';
 import './SecondHeader.css'
 const SecondHeader : React.FC = () => {
     const headerComponent = [

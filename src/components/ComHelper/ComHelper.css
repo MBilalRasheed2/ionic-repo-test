@@ -1,9 +1,15 @@
-.offer-settings {
-    display: flex;
-    align-items: center;
-    justify-content: start;
+.label-setting {
+    color: #212121;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px 5px;
 }
-.off-padding > *{
-    padding-left: 10px;
-    padding-right: 10px;
+
+.label-icon {
+   width: 20px;
+   height: 20px;
+   /* fill: #f00;  */
+   /* background-color:     #f00; */
+   fill:rgb(255,0,0);
+  
 }

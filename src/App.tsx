@@ -36,9 +36,9 @@ const App: React.FC = () => {
           <Route path={'/productlist'} exact={true}>
             <ProductsList />
           </Route>
-          <Route path={'/product-details/:id'} exact={true}>
-            <SingleProduct />
-          </Route>
+          <Route path={'/product-details/:id'} component={SingleProduct} exact={true}/>
+          
+         
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
