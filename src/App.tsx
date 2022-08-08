@@ -21,7 +21,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import ProductsList from './pages/ProductsList';
-import SingleProduct from './pages/SingleProduct';
+import SingleProduct from './pages/SingleProduct/Index';
 
 setupIonicReact();
 

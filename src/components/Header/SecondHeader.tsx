@@ -45,15 +45,15 @@ const SecondHeader : React.FC = () => {
                 {
                     headerComponent.map(item => {
                         return (<>
-                            <div color={'primary'} className='align-item-center' id={`${item.id}`}>
+                            <div key={item.id} color={'primary'} className='align-item-center' id={`${item.id}`}>
                                 <IonLabel class='padding-item'>{item.name}</IonLabel>
                                 <IonIcon src={down} ></IonIcon>
                             </div>
                             <IonPopover trigger={`${item.id}`}  arrow={true} side='bottom'  alignment='start' trigger-action="click">
-                                {childCategories.map(item => {
+                                {childCategories.map(child => {
                                     return (
-                                        <IonContent offset-x='10px' class="ion-padding offClass">
-                                            <IonLabel >{item.name}</IonLabel>
+                                        <IonContent  key={child.id} offset-x='10px' class="ion-padding offClass">
+                                            <IonLabel >{child.name}</IonLabel>
                                             <IonIcon src={down} ></IonIcon>
                                         </IonContent>)
                                 })}

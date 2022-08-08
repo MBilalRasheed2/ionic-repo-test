@@ -6,9 +6,9 @@ import './index.css'
 interface Props {
     showProps?: boolean;
     children: ReactNode
-  }
-  
-const Layout: React.FC<PropsWithChildren<Props>>= (props) => {
+}
+
+const Layout: React.FC<PropsWithChildren<Props>> = (props) => {
     return (
         <>
             <Header />
@@ -16,7 +16,7 @@ const Layout: React.FC<PropsWithChildren<Props>>= (props) => {
                 <IonGrid>
                     <IonRow>
                         <IonCol sizeMd='2.5' sizeSm='12'>
-                           {props.showProps && <LeftSide />} 
+                            {props.showProps && <LeftSide />}
                         </IonCol>
                         <IonCol sizeMd='9.5' sizeSm='12'>
                             {props.children}
