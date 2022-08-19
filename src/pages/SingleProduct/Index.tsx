@@ -19,10 +19,8 @@ const SingleProduct: React.FC<GroupDetailProps> = ({ match, }, props) => {
 
     const [productData, setProductData] = useState<any | null>(null);
     const { id } = match?.params
-    console.log("id", match?.params?.id)
     useEffect(() => {
         const getProduct = productlist.find(f => f.id.toString() === id.toString())
-        console.log(getProduct, getProduct)
         setProductData(getProduct);
     }, [id])
 

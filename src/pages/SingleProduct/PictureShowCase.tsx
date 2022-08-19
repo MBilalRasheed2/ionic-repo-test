@@ -13,26 +13,23 @@ const PictureShowCase: React.FC<React.PropsWithChildren<Props>> = (props) => {
     return (
         <IonRow>
             <IonCol size='3'>
-                <IonList>
+                <IonList class='verticalImageStack'>
                     {
                         images.map((item: any) => {
                             return (<IonItem
-                                lines='none'
+                                class='thumbnail'
                                 onClick={() => setDefaultImage(item)}
                                 key={item}>
-                                <img
-                                    src={item}
-                                    className='small-thump' />
+                                <img src={item} />
                             </IonItem>)
                         })
                     }
                 </IonList>
             </IonCol>
             <IonCol size='9'>
-                <div className='img-wrapper'>
+                <div className='productDescImgContainer'>
                     <img
                         src={defaultImage !== "" ? defaultImage : images[0]}
-                        className='picture-settings'
                     />
                 </div>
             </IonCol>

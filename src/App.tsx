@@ -22,23 +22,72 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import ProductsList from './pages/ProductsList';
 import SingleProduct from './pages/SingleProduct/Index';
+import CSVReader from './pages/CSVReader';
+
+import { useEffect, useState } from 'react';
+import { obj } from './components/DummyData';
+
 
 setupIonicReact();
 
 const App: React.FC = () => {
+  const [fakeApiData, setFakeApiData] = useState<string[]>()
+  useEffect(() => {
+    let temp:any[]=[]
+    Object.keys(obj).map((key: string, index: number) => {
+      let data = obj[key as keyof typeof obj]
+      let img = data.images.map(i => {
+        let url = i.url.replace("{@width}", "660");
+        url = url.replace("{@height}", "792");
+        url = url.replace("{@quality}", "50");
+
+        return url
+      })
+      let titles = data.titles
+      let description = "";
+      description = description + Object.keys(data.titles).map((k: string) => {
+        return titles[k as keyof typeof titles] + ".";
+      })
+      
+      temp.push({
+        id: 71 + index,
+        title: data.titles.superTitle,
+        "description": description,
+        price: data.pricing.prices[0].value,
+        "discountPercentage": data.pricing.prices[0].discount,
+        "rating": 4.44,
+        "stock": 7,
+        "brand": "luxury palace",
+        category: "Women's Sarees",
+        "thumbnail": img[0],
+        "images": img
+      })
+    })
+    setFakeApiData(temp)
+  }, [])
+  console.log("fakeApiData",fakeApiData)
   return (
-    <IonApp>
+    <IonApp style={{ overflow: 'scroll' }}>
+
+        {/* {
+          fakeApiData&& fakeApiData.map(item => {
+            return <div>
+            { JSON.stringify(item)},
+            </div>
+          })
+
+        } */}
       <IonReactRouter>
         <IonRouterOutlet id='main'>
           <Route path='/' exact={true}>
-            <Redirect to='/productlist'/>
+            <Redirect to='/productlist' />
           </Route>
           <Route path={'/productlist'} exact={true}>
             <ProductsList />
           </Route>
-          <Route path={'/product-details/:id'} component={SingleProduct} exact={true}/>
-          
-         
+          <Route path={'/product-details/:id'} component={SingleProduct} exact={true} />
+          <Route path={'/product-files'} component={CSVReader} exact={true} />
+
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>

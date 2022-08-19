@@ -1,8 +1,9 @@
 import React from 'react'
 import './TopHeader.css'
-import { IonButton, IonButtons, IonContent, IonIcon, IonItem, IonLabel, IonPopover, IonSearchbar, IonToolbar } from '@ionic/react'
+import { IonButton, IonButtons, IonContent, IonIcon, IonItem, IonLabel, IonList, IonPopover, IonSearchbar, IonToolbar } from '@ionic/react'
 import iconName from '../icons/cart.svg';
 import down from '../icons/chevron-down-outline.svg';
+import { menus } from '../Layout/dummyData';
 
 const TopHeader : React.FC = () => {
     return (
@@ -17,7 +18,20 @@ const TopHeader : React.FC = () => {
                     <IonIcon src={down} ></IonIcon>
                 </div>
                 <IonPopover trigger="click-trigger" trigger-action="click">
-                    <IonContent class="ion-padding">Hello World!</IonContent>
+                    <IonContent class="ion-padding">
+                    <IonList>
+                        {
+                            menus.map(item=>{
+                                return (
+                                    <IonItem button={true} trigger>
+                                        {item.label}
+                                    </IonItem>
+                                )
+                            })
+                        }
+                    </IonList>
+
+                    </IonContent>
                 </IonPopover>
                 <div color={'primary'} className='align-item-center' >
                     <IonIcon src={iconName} ></IonIcon>
